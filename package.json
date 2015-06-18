@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sittingbool/rh-node-utils.git"
+    "url": "git+https://github.com/sittingbool/sbool-node-utils.git"
   },
   "keywords": [
     "util",
@@ -19,9 +19,9 @@
   "author": "Richard Habermann <sittingbool@gmx.de> (https://github.com/sittingbool/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sittingbool/rh-node-utils/issues"
+    "url": "https://github.com/sittingbool/sbool-node-utils/issues"
   },
-  "homepage": "https://github.com/sittingbool/rh-node-utils#readme",
+  "homepage": "https://github.com/sittingbool/sbool-node-utils#readme",
   "dependencies": {
   },
   "devDependencies": {
