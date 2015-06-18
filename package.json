@@ -1,6 +1,6 @@
 {
   "name": "sbool-node-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Utilities for node js",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,10 @@
   },
   "homepage": "https://github.com/sittingbool/sbool-node-utils#readme",
   "dependencies": {
+    "MD5": "*",
+    "q": "*",
+    "node-class": "*",
+    "dateformat": "*"
   },
   "devDependencies": {
     "mocha": "~1.21.4",
