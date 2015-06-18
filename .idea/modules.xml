@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/rh-node-utils.iml" filepath="$PROJECT_DIR$/.idea/rh-node-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sbool-node-utils.iml" filepath="$PROJECT_DIR$/.idea/sbool-node-utils.iml" />
     </modules>
   </component>
 </project>
