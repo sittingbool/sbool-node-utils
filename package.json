@@ -1,0 +1,32 @@
+{
+  "name": "sbool-node-utils",
+  "version": "0.1.0",
+  "description": "Utilities for node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sittingbool/rh-node-utils.git"
+  },
+  "keywords": [
+    "util",
+    "utils",
+    "type",
+    "date"
+  ],
+  "author": "Richard Habermann <sittingbool@gmx.de> (https://github.com/sittingbool/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sittingbool/rh-node-utils/issues"
+  },
+  "homepage": "https://github.com/sittingbool/rh-node-utils#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "~1.21.4",
+    "should": "~4.0.4",
+    "supertest": "~0.13.0"
+  }
+}
