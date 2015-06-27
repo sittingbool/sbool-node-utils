@@ -1,6 +1,6 @@
 var crypto = require('crypto'),
 // https://en.wikipedia.org/wiki/Camellia_%28cipher%29
-algo = 'camellia256',
+algo = process.env.CIPHER_UTIL_ALGO,  // e.g. 'camellia256',
 dec = 'utf8',
 // hex creates tokens, that are too long
 pwEnc = 'hex',
@@ -33,6 +33,11 @@ module.exports = /** * @lends module:CipherUtil */ {
                     'more chars on process.env.CIPHER_UTIL_PW!');
             }
 
+            if ( typeof algo !== 'string' || algo.length < 1 ) {
+                throw new Error('Please choose an algorithm' +
+                    ' on process.env.CIPHER_UTIL_ALGO!');
+            }
+
             var iv = crypto.randomBytes(ivBlock),
 
             ciphered = crypto.createCipheriv(algo, pw, iv),
@@ -62,6 +67,11 @@ module.exports = /** * @lends module:CipherUtil */ {
             if ( typeof pw !== 'string' || pw.length < 8 ) {
                 throw new Error('Please set a password with 8 or ' +
                     'more chars on process.env.CIPHER_UTIL_PW!');
+            }
+
+            if ( typeof algo !== 'string' || algo.length < 1 ) {
+                throw new Error('Please choose an algorithm' +
+                    ' on process.env.CIPHER_UTIL_ALGO!');
             }
 
             var ciphered = crypto.createCipher(algo, pw),
@@ -146,6 +156,11 @@ module.exports = /** * @lends module:CipherUtil */ {
                     'more chars on process.env.CIPHER_UTIL_PW!');
             }
 
+            if ( typeof algo !== 'string' || algo.length < 1 ) {
+                throw new Error('Please choose an algorithm' +
+                    ' on process.env.CIPHER_UTIL_ALGO!');
+            }
+
             var buffer = new Buffer(string, enc),
 
             iv = buffer.slice(0, ivBlock),
@@ -181,6 +196,11 @@ module.exports = /** * @lends module:CipherUtil */ {
                     'more chars on process.env.CIPHER_UTIL_PW!');
             }
 
+            if ( typeof algo !== 'string' || algo.length < 1 ) {
+                throw new Error('Please choose an algorithm' +
+                    ' on process.env.CIPHER_UTIL_ALGO!');
+            }
+
             var buffer = new Buffer(string, pwEnc),
 
             toDecipher = crypto.createDecipher(algo, pw),
@@ -209,6 +229,6 @@ module.exports = /** * @lends module:CipherUtil */ {
 
         return this.decipher(querystring.unescape(string));
 
-    },
+    }
 
 };
