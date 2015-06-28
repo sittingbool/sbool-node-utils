@@ -11,6 +11,7 @@ var available = {
     typesUtil: '/util/types',
     promisesUtil: '/util/promises',
     fileLogger: '/util/fileLogger',
+    configLoader: '/util/configLoader',
     lazyRequire: lazyRequire
 };
 
