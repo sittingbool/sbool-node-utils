@@ -8,7 +8,7 @@ var jsonFile = require('jsonfile');
 var fs = require('fs');
 
 /**
- * Loads config from a json file with many options
+ * Loads config file with many options
  *
  * @param configDir - directory which should be used for
  * @param options - object that can take following parameters:
@@ -36,7 +36,7 @@ var isFile = function( path) {
 
 module.exports = function( configDir, options) {
 
-    var configDir = process.env.CONFIGDIR || null, defaultPath = options.defaultFilePath || null,
+    var configDir = process.env[options.configEnvironmentVar] || configDir || null, defaultPath = options.defaultFilePath || null,
         configIndexFilePath, configIndex, altFileDir, confFile;
 
     if( configDir ) {
