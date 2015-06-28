@@ -40,23 +40,18 @@ module.exports = function( configDir, options) {
         configIndexFilePath, configIndex, altFileDir, confFile;
 
     if( configDir ) {
-        // Try to load this from default config dir path where the given dir has a folder database
-        // and a file modelScheme.json inside
         confFile = path.join(configDir, options.subDirPath || '', options.fileToBeLoaded);
 
         if ( isFile( confFile ) ) {
             return confFile;
         }
 
-        // Alternatively look for index.json in config dir path and in this file for the key
-        // "modelFile" to get the path for the model scheme relative to the config dir path
         configIndexFilePath = path.join(configDir, 'index.json');
 
         if ( isFile( configIndexFilePath ) ) {
             configIndex = jsonFile.readFileSync(configIndexFilePath);
 
-            // check if file name is alterd
-            confFile = configIndex[options.altFileNameKey] || null; // TODO: ch
+            confFile = configIndex[options.altFileNameKey] || null;
 
             if ( confFile ) {
                 confFile = path.join(configDir, confFile);
@@ -65,7 +60,6 @@ module.exports = function( configDir, options) {
                 }
             }
 
-            // check if folder name is altered
             altFileDir = configIndex[options.altDirNameKey] || null;
 
             if ( altFileDir ) {
@@ -76,7 +70,7 @@ module.exports = function( configDir, options) {
                 }
             }
         }
-    } else { // use backup files
+    } else {
         confFile = defaultPath;
 
         if ( isFile( confFile ) ) {
