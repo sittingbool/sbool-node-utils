@@ -12,7 +12,7 @@ var available = {
     promisesUtil: '/util/promises',
     fileLogger: '/util/fileLogger',
     configLoader: '/util/configLoader',
-    lazyRequire: lazyRequire
+    lazyRequire: '/lib/lazyRequire'
 };
 
 module.exports = lazyRequire(available, __dirname);
