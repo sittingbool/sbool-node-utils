@@ -39,8 +39,8 @@ module.exports = function( configDirFb, options) {
     var configDir = process.env[options.configEnvironmentVar], defaultPath = options.defaultFilePath || null,
         configIndexFilePath, configIndex, altFileDir, confFile;
 
-    if( configDir === 'undefined' || config === 'null' ) {
-        configDir = configDir || null;
+    if( configDir === 'undefined' || configDir === 'null' ) {
+        configDir = configDirFb || null;
     }
 
     if( configDir ) {
