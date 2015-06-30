@@ -34,10 +34,14 @@ var isFile = function( path) {
     return ( stat && stat.isFile() );
 };
 
-module.exports = function( configDir, options) {
+module.exports = function( configDirFb, options) {
 
-    var configDir = process.env[options.configEnvironmentVar] || configDir || null, defaultPath = options.defaultFilePath || null,
+    var configDir = process.env[options.configEnvironmentVar], defaultPath = options.defaultFilePath || null,
         configIndexFilePath, configIndex, altFileDir, confFile;
+
+    if( configDir === 'undefined' || config === 'null' ) {
+        configDir = configDir || null;
+    }
 
     if( configDir ) {
         confFile = path.join(configDir, options.subDirPath || '', options.fileToBeLoaded);
