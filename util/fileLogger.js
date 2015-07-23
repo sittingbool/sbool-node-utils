@@ -43,7 +43,7 @@ var FileLogger = __class( "FileLogger", {
 
         this.filePath = path.join(logDir, fileName);
 
-        this.stream = fs.createWriteStream(this.filePath, {flags : 'w'});
+        this.stream = fs.createWriteStream(this.filePath, {flags : 'a'});
     },
 
 
